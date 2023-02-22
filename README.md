@@ -1,4 +1,6 @@
 # com.aflac.wiget Assessment
+[![Java CI with Maven](https://github.com/roatanrich/aflac/actions/workflows/maven.yml/badge.svg)](https://github.com/roatanrich/aflac/actions/workflows/maven.yml)
+
 ## Instructions:
 - Please review the attached code and write down *everything* that is wrong and include your explanation of why.
 - Make the corrections to the identified areas from step 1, as well as any other optimizations of your choosing, and return the corrected code.
