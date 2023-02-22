@@ -35,14 +35,18 @@ public  void doubleValues(List<Widget> widgetList) {
  }
  ```
 The removeDuplicates was changed greatly from its original source. The signature was changed from void to returning a `List<Widget>` for clarity.
-`public List<Widget> removeDuplicates(List<Widget> widgetList) {
+```
+public List<Widget> removeDuplicates(List<Widget> widgetList) {
    List<Widget> result = new ArrayList<Widget>(new HashSet<>(widgetList));
    return  result;
- }`
-The getWidgetsOfValue had the most changes, one the return was changed to a single `List<Widget>` which is a change from `List<List<Widget>>` originally. The TODO comment was removed and the method implements multiple counts of widgets. *NOTE: name was changed from getTwoWidgetsOfValue*
+ }
+ ```
+The getWidgetsOfValue had the most changes.  The return value is now a single `List<Widget>` which is a change from `List<List<Widget>>` originally. The TODO comment was removed and the method implements multiple counts of widgets. *NOTE: name was changed from getTwoWidgetsOfValue*
+```
+public List<Widget> getWidgetsOfValue(List<Widget> widgetList, Double combinedValue) {
+  List<Widget> secondWidgetList = widgetList;
+  List<Widget> result = widgetList.stream().filter(x -> secondWidgetList.stream().anyMatch(y -> x.getValue() + y.getValue() == combinedValue)).collect(Collectors.toList());
+  return  result;
+}
+```
 Code coverage: Widget = 96%, WidgetUtils = 100%
-
-### Most people are failing because they’re not performing unit tests and not documenting any comments in the code.  It is important to put time into this as it is a critical piece of testing your technical abilities. This is essentially the most important piece in testing your technical skills.
-
-
-
