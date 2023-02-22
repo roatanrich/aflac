@@ -38,6 +38,7 @@ The removeDuplicates was changed greatly from its original source. The signature
 ```
 public List<Widget> removeDuplicates(List<Widget> widgetList) {
    List<Widget> result = new ArrayList<Widget>(new HashSet<>(widgetList));
+   
    return  result;
  }
  ```
@@ -45,7 +46,10 @@ The getWidgetsOfValue had the most changes.  The return value is now a single `L
 ```
 public List<Widget> getWidgetsOfValue(List<Widget> widgetList, Double combinedValue) {
   List<Widget> secondWidgetList = widgetList;
-  List<Widget> result = widgetList.stream().filter(x -> secondWidgetList.stream().anyMatch(y -> x.getValue() + y.getValue() == combinedValue)).collect(Collectors.toList());
+  List<Widget> result = widgetList.stream().filter(x -> secondWidgetList.stream()
+   .anyMatch(y -> x.getValue() + y.getValue() == combinedValue))
+   .collect(Collectors.toList());
+   
   return  result;
 }
 ```
